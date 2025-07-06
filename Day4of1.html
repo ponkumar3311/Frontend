@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="day4of1.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="img">
+            <img src="E:\Frontend Learnings test\hynd.jfif" alt="" height="100px">
+        </div>
+        <div class="one">
+            <li id="h1"><a href="E:\Frontend Learnings test\Day4of0.html">Home</a></li>
+            <li id="h2"><a href="E:\Frontend Learnings test\Day4of0.html">About</a></li>
+            <li id="h3"><a href="E:\Frontend Learnings test\Day4of1.html">Form</a></li>
+            <li id="h4"><a href="E:\Frontend Learnings test\Day4of0.html">Contact</a></li>
+        </div>
+        <div class="boxbar" onclick="showsidebar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+        </div>
+    </div>
+    <div>
+    <div class="hdiv hdiv1" id="hhdiv" >
+        <div class="H" id="HH"> 
+        <div id="H1"><a href="E:\Frontend Learnings test\Day4of0.html">Home</a></div>
+        <div id="H2"><a href="E:\Frontend Learnings test\Day4of0.html">About</a></div>
+        <div id="H3"><a href="E:\Frontend Learnings test\Day4of1.html">Form</a></div>
+        <div id="H4"><a href="E:\Frontend Learnings test\Day4of0.html">Contact</a></div>
+        </div>
+    </div>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="outerbox">
+<div  class="box1" >
+    <h2>Employee Details</h2>
+    <table id="emptable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>State</th>
+        <th>Hobby</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>1234567890</td>
+        <td>john@example.com</td>
+        <td>25</td>
+        <td>Male</td>
+        <td>Tamil Nadu</td>
+        <td>Reading</td>
+        <td>123 Main St, Chennai</td>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>1234567890</td>
+        <td>john@example.com</td>
+        <td>25</td>
+        <td>Male</td>
+        <td>Tamil Nadu</td>
+        <td>Reading</td>
+        <td>123 Main St, Chennai</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+<div class="box3">
+<div class="box2">
+    <div id="form"  >
+                    <h1>Employee Form</h1>
+                <form style="margin-left: 20px;" id="empform">
+                    
+                    
+                    <label>Name</label>
+                   
+                    <input type="text" id="name"/><br/>
+                    
+                    <label>Phone</label>
+                    
+                    <input type="number" id="number"/><br/>
+                   
+                    <label>Email</label>
+                    
+                    <input type="email" id="email"/><br/>
+                     <label>Age  </label>
+                    
+                    <input type="number"/><br/>
+                    
+                            <label>Gender</label>
+                        <label>
+                            <input type="radio" name="gender" value="Male"/ class="m"/> Male
+                            </label>
+
+                             <label>
+                            <input type="radio" name="gender" value="Female" class="f"/> Female
+                            </label><br/>
+                      
+                    <label>State</label>
+                   
+                    <select id="state" name="state">
+                        <option value="">--Select--</option>
+                        <option value="TN">TN</option>
+                        <option value="KL">KL</option>
+                        <option value="AP">AP</option>
+                        <option value="KA">KA</option>
+                        </select>
+                   
+                    <label>Hobby</label>
+                    
+                    <label>
+                    <input type="checkbox" name="hobby" value="reading" class="checkbox"> Reading
+                    </label>
+                    <label>
+                    <input type="checkbox" name="hobby" value="traveling" class="checkbox"> Traveling
+                    </label><br/>
+                    
+                    <div class="form-group" >
+                        <label for="address" style="display: inline-block; vertical-align:top">Address:</label>
+                        <textarea id="address" name="address" style="display: inline-block;"></textarea>
+                        </div>
+                      <button  type="submit">Submit</button>
+                    </div>  
+                </form>
+                </div>
+
+        </div>
+        </div>
+</div>
+<footer style="margin-bottom: 0%; display:flex;">
+            <div style="background-color:black ;width:100%;height: 100px; color:white; display:flex;justify-content:center" >
+                   <center style="margin-top:30px">
+                      &copy; Hyndai
+                   </center> 
+            </div>
+
+          </footer>
+    
+    <script src="Day4of1.js"></script>
+</body>
+</html>
+
