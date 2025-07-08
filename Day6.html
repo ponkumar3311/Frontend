@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Filter</title>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      padding: 20px;
+      background-color: #1a1717;
+      color: white;
+    }
+
+    .hidefilter {
+      
+      right: +4000px;
+      position: absolute;
+      
+    }
+    .showfilter{
+      display:inline-block;
+      right:0px;
+      background-color: #a4a3a3;
+      position: absolute;
+      width: 250px;
+    }
+
+    .filters input, .filters select {
+      padding: 8px;
+      width: 200px;
+      margin: 20px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-evenly;
+      margin-top: 100px;
+    }
+
+    .product {
+      border: 1px solid #817f7f;
+      padding: 10px;
+      border-radius: 5px;
+      width: 400px;
+      justify-items: center;  
+      
+      background-color: #787474; 
+    }
+     .product:hover {
+       background-color: #ffffff;
+      cursor: pointer; 
+      color:black;
+    }
+    
+
+    .hidden {
+      display: none;
+    }
+
+    .product h4 {
+      margin: 5px 0;
+    }
+
+    .product p {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+    button{
+      font-size:medium;
+      font-weight: bold;
+    }
+    button:hover{
+         cursor: pointer;
+    }
+    
+    .buynowbtn{
+      background-color: green;
+      color: white;  
+      border-color: green;
+    }
+    .buynowbtn:hover{
+       height: 50px;
+       width: 110px;
+    }
+    .atcbtn{
+         background-color:rgb(6, 6, 84);
+      color: white;
+      border-color: rgb(6, 6, 84);
+      width:110px;
+      height: 45px;
+    }
+    .atcbtn:hover{
+       height: 50px;
+       width: 110px;
+    }
+    .pargraph{
+       font-weight:bolder;
+       padding: 20px;
+       padding-bottom: 30px;
+    }
+
+  </style>
+</head>
+<body>
+    
+<div style="display: flex; justify-content:space-around">
+  <h1>FORTE</h1>
+  <div>
+  <input type="text" id="cussearch" style="height: 45px; margin-top :25px; width:300px;font-size:larger"/>
+  <button style="height: 45px; width: 100px;" onclick="filterProducts()">search</button>
+  </div>
+  <div>
+  <button id="button" onclick="showfilter()" style="height: 35px; width: 100px;">Filter</button>
+  <button id="button" onclick="clearfilter()" style="height: 35px; width: 100px;">Clear Filter</button>
+  </div>
+  </div>
+
+  <div class="filters hidefilter" id="fil">
+    <input type="text" id="searchModel" placeholder="Search Model Name">
+    <select id="categorySelect">
+      <option value="all">All Categories</option>
+      <option value="mobile">Mobile</option>
+      <option value="laptop">Laptop</option>
+    </select>
+    <input type="number" id="minPrice" placeholder="Min Price">
+    <input type="number" id="maxPrice" placeholder="Max Price">
+    <button id="button" onclick="filterProducts()" style="height: 40px; width: 100px; margin-left:80px" >Apply Filter</button>
+  </div>
+
+  <div class="product-list" id="productList">
+    <div class="product" data-category="mobile" data-price="119999">
+      <h4>SAMSUNG Galaxy S24 Ultra 5G (12GB RAM, 256GB, Titanium Yellow)</h4>
+      <img src="E:\Front End e-commerce\SAMSUNG Galaxy S24 Ultra 5G (12GB RAM, 256GB, Titanium Yellow).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹119999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="24999">
+      <h4>Redmi Note 11</h4>
+      <img src="E:\Front End e-commerce\Redmi Note 14 Pro 5G (8GB RAM, 256GB, Ivy Green).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹24999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="30000">
+      <h4>realme 12 Pro 5G (8GB RAM, 256GB, Submarine Blue)</h4>
+      <img src="E:\Front End e-commerce\realme 12 Pro 5G (8GB RAM, 256GB, Submarine Blue).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹30000</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="31999">
+      <h4>Redmi Note 12 Pro+ 5G (12GB RAM, 256GB, Black)</h4>
+      <img src="E:\Front End e-commerce\Redmi Note 12 Pro+ 5G (12GB RAM, 256GB, Black).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹31999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="19000">
+      <h4>SAMSUNG Galaxy M20 (4GB RAM, 64GB, Ocean Blue)</h4>
+      <img src="E:\Front End e-commerce\SAMSUNG Galaxy M20 (4GB RAM, 64GB, Ocean Blue).webp">
+      <p>Mobile</p>
+      <p class="pargraph">₹19000</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="27000">
+      <h4>OnePlus Nord CE3 5G (12GB RAM, 256GB, Gray Shimmer)</h4>
+      <img src="E:\Front End e-commerce\OnePlus Nord CE3 5G (12GB RAM, 256GB, Gray Shimmer).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹27000</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="137999">
+      <h4>Apple iPhone 16 Pro Max (256GB, Natural Titanium)</h4>
+      <img src="E:\Front End e-commerce\Apple iPhone 16 Pro Max (256GB, Natural Titanium).webp"style="width:400px">
+      <p>Mobile</p>
+      <p  class="pargraph">₹137999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="24999">
+      <h4>OnePlus Nord CE4 5G (8GB RAM, 256GB, Marble)</h4>
+      <img src="E:\Front End e-commerce\OnePlus Nord CE4 5G (8GB RAM, 256GB, Marble).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹24999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="35999">
+      <h4>realme GT 6 5G (8GB RAM, 256GB, Fluid Silver)</h4>
+      <img src="E:\Front End e-commerce\realme GT 6 5G (8GB RAM, 256GB, Fluid Silver).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹35999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="99999">
+      <h4>Apple iPhone 15 Pro (1TB, Blue Titanium)</h4>
+      <img src="E:\Front End e-commerce\Apple iPhone 15 Pro (1TB, Blue Titanium).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹99999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="mobile" data-price="42999">
+      <h4>Apple iPhone 15 Pro (1TB, Blue Titanium)</h4>
+      <img src="E:\Front End e-commerce\OnePlus 13R 5G (12GB RAM, 256GB, Astral Trail).webp"style="width:400px">
+      <p>Mobile</p>
+      <p class="pargraph">₹42999</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="72990">
+      <h4>HP Victus FA1198TX Intel Core i5 13th Gen Gaming Laptop (16GB, 512GB SSD, Windows 11 Home, 6GB Graphics, 15.6 inch 144 Hz Full HD Display, NVIDIA GeForce RTX 3050, MS Office, Meca Silver, 2.29 KG)</h4>
+      <img src="E:\Front End e-commerce\HP Victus FA1198TX Intel Core i5 13th Gen Gaming Laptop (16GB, 512GB SSD, Windows 11 Home, 6GB Graphics, 15.6 inch 144 Hz Full HD Display, NVIDIA GeForce RTX 3050, MS Office, Meca Silver, 2.29 KG).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹72990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="55990">
+      <h4>Dell Inspiron 15 3530 Intel Core i5 13th Gen Thin & Light Laptop (16GB, 512GB SSD, Windows 11 Home, 15.6 inch Full HD WVA IPS Display, MS Office Home & Student 2021, Platinum Silver, 1.62 KG)</h4>
+      <img src="E:\Front End e-commerce\Dell Inspiron 15 3530 Intel Core i5 13th Gen Thin & Light Laptop (16GB, 512GB SSD, Windows 11 Home, 15.6 inch Full HD WVA IPS Display, MS Office Home & Student 2021, Platinum Silver, 1.62 KG).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹55990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="63990">
+      <h4>HP Pavilion 15-eg3081TU Intel Core i5 13th Gen (15.6 inch, 16GB, 512GB, Windows 11 Home, MS Office 2021, Intel Iris Xe, Full HD IPS Display, Fog Blue, 875N6PA)</h4>
+      <img src="E:\Front End e-commerce\HP Pavilion 15-eg3081TU Intel Core i5 13th Gen (15.6 inch, 16GB, 512GB, Windows 11 Home, MS Office 2021, Intel Iris Xe, Full HD IPS Display, Fog Blue, 875N6PA).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹63990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="88990">
+      <h4>ASUS Vivobook 14 Flip Intel Core Ultra 5 Touchscreen 2-in-1 Laptop (16GB, 512GB SSD, Windows 11 Home, 14 inch OLED Display, MS Office Home 2024 & MS 365 Basic, Matte Gray, 1.57 KG)</h4>
+      <img src="E:\Front End e-commerce\ASUS Vivobook 14 Flip Intel Core Ultra 5 Touchscreen 2-in-1 Laptop (16GB, 512GB SSD, Windows 11 Home, 14 inch OLED Display, MS Office Home 2024 & MS 365 Basic, Matte Gray, 1.57 KG).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹88990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="79490">
+      <h4>Dell Inspiron 7440 Intel Core i5 13th Gen Touchscreen 2-in-1 Laptop (16GB, 512GB SSD, Windows 11 Home, 14 inch Full HD Plus IPS Display, MS Office 2021, Ice Blue Metal, 1.75 KG)</h4>
+      <img src="E:\Front End e-commerce\Dell Inspiron 7440 Intel Core i5 13th Gen Touchscreen 2-in-1 Laptop (16GB, 512GB SSD, Windows 11 Home, 14 inch Full HD Plus IPS Display, MS Office 2021, Ice Blue Metal, 1.75 KG).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹79490</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="113990">
+      <h4>ASUS ROG Strix G16 Intel Core i7 13th Gen Gaming Laptop (16GB, 1TB SSD, Windows 11 Home, 6GB Graphics, 16 inch 165 Hz Full HD Plus Display, NVIDIA GeForce RTX 4050, MS Office Home 2024, Eclipse Gray, 2.5 KG)</h4>
+      <img src="E:\Front End e-commerce\ASUS ROG Strix G16 Intel Core i7 13th Gen Gaming Laptop (16GB, 1TB SSD, Windows 11 Home, 6GB Graphics, 16 inch 165 Hz Full HD Plus Display, NVIDIA GeForce RTX 4050, MS Office Home 2024, Eclipse Gray, 2.5 KG).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹113990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product" data-category="laptop" data-price="153990">
+      <h4>Apple MacBook Air (15.3 inch, M4, 24GB, 512GB, macOS, Midnight)</h4>
+      <img src="E:\Front End e-commerce\Apple MacBook Air (15.3 inch, M4, 24GB, 512GB, macOS, Midnight).webp"style="width:400px">
+      <p>Laptop</p>
+      <p class="pargraph">₹153990</p>
+      <div style="display: flex;width: 400px; justify-content:space-evenly;" class="buynowdiv">
+      <button class="buynowbtn" >Buy Now</button>
+      <button  class="atcbtn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <footer style="margin-bottom: 0%; display:flex;">
+            <div style=" background-color:black ;width:100%;height: 100px; color:white; display:flex;justify-content:center" >
+                   <center style="margin-top:30px">
+                      &copy; Hyndai
+                   </center> 
+            </div>
+
+  </footer>
+ 
+
+  <script>
+    
+
+
+    function filterProducts() {
+      const searchInput = document.getElementById('searchModel');
+    const categorySelect = document.getElementById('categorySelect');
+    const minPriceInput = document.getElementById('minPrice');
+    const maxPriceInput = document.getElementById('maxPrice');
+    const products = document.querySelectorAll('.product');
+    const custom = document.getElementById("cussearch");
+      const search = searchInput.value.toLowerCase();
+      const search1 = custom.value.toLowerCase();
+      const category = categorySelect.value;
+      const minPrice = parseInt(minPriceInput.value) || 0;
+      const maxPrice = parseInt(maxPriceInput.value) || Infinity;
+
+      products.forEach(product => {
+        const h4 = product.querySelector('h4')?.textContent.toLowerCase() || '';
+        const p = product.querySelector('p')?.textContent.toLowerCase() || '';
+        const modelName1 = `${h4}, ${p}`;
+        console.log(modelName1);
+        const modelName = product.querySelector('h4').textContent.toLowerCase();
+        const productCategory = product.dataset.category;
+        const price = parseInt(product.dataset.price);
+        
+        const matchName = modelName.includes(search);
+        const matchName1 = modelName1.includes(search1)||category.includes(search1) ;
+        const matchCategory = category === 'all' || category === productCategory;
+        const matchPrice = price >= minPrice && price <= maxPrice;
+
+        if (matchName && matchCategory && matchPrice && matchName1) {
+          product.classList.remove('hidden');
+        } else {
+          product.classList.add('hidden');
+        }
+      });
+
+      b=document.getElementById('fil');
+      b.classList.remove('showfilter');
+      b.classList.add('hidefilter'); 
+    }
+    
+    function showfilter(){
+      
+        a=document.getElementById('fil');
+        if(a.classList.contains('hidefilter')){
+            a.classList.remove('hidefilter');
+            a.classList.add('showfilter');        
+           }
+    else{
+            a.classList.remove('showfilter');
+            a.classList.add('hidefilter'); 
+    }
+
+    }
+    function clearfilter(){
+    const Input = document.getElementById('searchModel').value="";
+    const Select = document.getElementById('categorySelect').value="all";
+    const minInput = document.getElementById('minPrice').value="";
+    const maxInput = document.getElementById('maxPrice').value="";
+     filterProducts()
+    }
+    
+  </script>
+
+</body>
+</html>
