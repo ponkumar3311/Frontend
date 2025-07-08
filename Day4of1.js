@@ -23,7 +23,7 @@ var a;
   const name = document.getElementById('name').value;
   const phone = document.getElementById('number').value;
   const email = document.getElementById('email').value;
-  const age = document.querySelector('input[type="number"]:not(#number)').value;
+  const age = document.getElementById('age').value;
 
   const gender = document.querySelector('input[name="gender"]:checked')?.value || "";
 
@@ -33,9 +33,33 @@ var a;
                        .map(cb => cb.value)
                        .join(', ');
 
+          
+
   const address = document.getElementById('address').value;
 
+  if(name==''){
+    alert("Please enter name");
+    return false;
+  }
+  if (phone.length != 10 || isNaN(phone)) {
+    alert("Pleae enter a correct phone number");
+    return false;
   
+  }
+  
+  if(email==''){
+    alert("Please Enter Correct Email");
+    return false;
+  }
+  if (age.length != 2 || isNaN(age)) {
+    alert("Pleae enter a correct Age");
+    return false;
+  
+  }
+  if(address==''){
+    alert("Please enter Address");
+    return false;
+  }
   const tableBody = document.getElementById('emptable').getElementsByTagName('tbody')[0];
   const newRow = tableBody.insertRow();
 
@@ -50,6 +74,15 @@ var a;
     <td>${address}</td>
   `;
 
-  
-  document.getElementById('empform').reset();
+  document.getElementById('name').value="";
+  document.getElementById('number').value="";
+  document.getElementById('email').value="";
+  document.getElementById('age').value="";
+  document.getElementById('address').value="";
+  document.getElementById('state').value="";
+  document.getElementById('male').checked=false;
+  document.getElementById('female').checked=false;
+  document.getElementById('reading').checked=false;
+  document.getElementById('traveling').checked=false;
+  //document.getElementById('empform').reset();
 });

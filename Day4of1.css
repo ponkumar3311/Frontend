@@ -107,6 +107,7 @@
      height: 30px;
                 width: 300px;
                 margin: 10px;
+                font-size: medium;
             }
             #form{
                 display: inline-block;
@@ -118,6 +119,8 @@
                 overflow: hidden;
                 padding: 20px;
                 margin-bottom: 20px;
+                color: white;
+                font-size: large;
             }
             label{
                 margin: 15px;
@@ -160,6 +163,7 @@
                 height: 300px;
                 resize: none;
                 overflow: hidden;
+                font-size: large;
             }
     .outerbox{
           display: flex;

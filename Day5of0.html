@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="Day5of0.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="img">
+            <img src="E:\Frontend Learnings test\hynd.jfif" alt="" height="100px">
+        </div>
+        <div class="one">
+            <li id="h1"><a href="E:\Frontend Learnings\Day4of0.html">Home</a></li>
+            <li id="h2"><a href="#about">About</a></li>
+            <li id="h3"><a href="E:\Frontend Learnings\Day4of1.html">Form</a></li>
+            <li id="h4"><a href="E:\Frontend Learnings\Day5of0.html">ToDo</a></li>
+        </div>
+        <div class="boxbar" onclick="showsidebar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+        </div>
+    </div>
+    <div>
+    <div class="hdiv hdiv1" id="hhdiv" >
+        <div class="H" id="HH"> 
+        <div id="H1"><a href="E:\Frontend Learnings test\Day4of0.html">Home</a></div>
+        <div id="H2"><a href="E:\Frontend Learnings test\Day4of0.html">About</a></div>
+        <div id="H3"><a href="E:\Frontend Learnings test\Day4of1.html">Form</a></div>
+        <div id="H4"><a href="E:\Frontend Learnings test\Day5of0.html">ToDo</a></div>
+        </div>
+    </div>
+    <div style="width: 100%; min-height:550px; background-color:rgb(176, 184, 181);" id="o">
+         <div   >
+            <div style="padding: 20px;">
+                <input type="text" id="in"/> <button onclick="addtask()" class="add"> Add Task</button>
+                <ol id="ollist"></ol>
+            </div>
+            
+        </div>
+       
+    </div>
+    
+
+    <footer style="margin-bottom: 0%; display:flex;">
+            <div style=" background-color:rgb(17, 16, 16) ;width:100%;height: 100px; color:white; display:flex;justify-content:center" >
+                   <center style="margin-top:30px">
+                      &copy; Hyndai
+                   </center> 
+            </div>
+
+          </footer> 
+          <script>
+            function addtask(){
+
+            a=document.getElementById("in").value;
+            if(a.trim()==''){
+                return;
+            }
+              var b = `
+                <li>
+                   <span onclick="done(this)">${a}</span>
+                    <div>
+    
+                    <button onclick="edittask(this)"class="edit">Edit</button>
+                    <button onclick="deletetask(this)"class="delete">Delete</button>
+                    </div>
+                </li>
+                `;
+
+                document.getElementById("ollist").innerHTML+=b;
+                document.getElementById("in").value="";
+            }
+            function done(span){
+                span.parentElement.classList.toggle("done")
+            }
+            function deletetask(button){
+                button.parentElement.parentElement.remove();
+            }
+            function edittask(button) {
+                let span = button.parentElement.parentElement.querySelector("span");
+                let newText = prompt("Edit task:", span.textContent);
+                if (newText !== null && newText.trim() !== "") {
+                span.textContent = newText;
+                }
+            }
+          </script>
+    
+    <script src="Day5of0.js"></script>
+</body>
+</html>
