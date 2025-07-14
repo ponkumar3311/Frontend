@@ -98,7 +98,7 @@ export default function Content6() {
       {showModal && (
         <div className="modalone">
           <div className="modaltwo">
-            <h3>Edit & Submit</h3>
+            <h3>Preview</h3>
 
             <div className="question">
               <label><strong>Name:</strong></label><br />

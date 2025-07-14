@@ -60,8 +60,11 @@ table, th, td {
 }
 input[type=text]{
     height: 30px;
-    width: 200px;
+    width: 300px;
 }
 span{
   font-weight: bolder;
+}
+input{
+  font-size: large;
 }

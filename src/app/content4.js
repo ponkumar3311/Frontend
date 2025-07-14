@@ -20,7 +20,7 @@ export default function Content4() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Search Table</h2>
+      <h2>Data Table</h2>
 
      
       <input
