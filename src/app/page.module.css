@@ -45,17 +45,29 @@
     .buynowbtn:hover{
        height: 50px;
        width: 110px;
+       background-color: black;
+       color: white;
     }
     .atcbtn{
          background-color:rgb(6, 6, 84);
       color: white;
       border-color: rgb(6, 6, 84);
-     height: 45px;
+     height: 55px;
       width: 100px;
+      
       
     }
     .atcbtn:hover{
-       height: 50px;
+       height: 60px;
        width: 110px;
+       border-color:rgb(6, 6, 84);
+       background-color: black;
+       color: white;
+    }
+    .fltr{
+      margin: 10px;
+    }
+    .fltr:hover{
+      cursor: pointer;
     }
 /*--------------------------------------------------------------------------------------------------------------------------*/

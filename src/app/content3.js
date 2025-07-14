@@ -16,8 +16,8 @@ export default function Content3() {
           <button style={{ height: '45px', width: '100px' }}>search</button>
         </div>
         <div>
-          <button id="button" style={{ height: '35px', width: '100px' }}>Filter</button>
-          <button id="button" style={{ height: '35px', width: '100px' }}>Clear Filter</button>
+          <button id="button" className={styles.fltr}style={{ height: '35px', width: '100px', backgroundColor:'white',color:'black'}}>Filter</button>
+          <button id="button" className={styles.fltr}style={{ height: '35px', width: '150px',backgroundColor:'white',color:'black' }}>Clear Filter</button>
         </div>
         </div>
       
